@@ -1,0 +1,638 @@
+{% extends "basic.html" %}
+{% block content %}
+
+<center>
+  <div id="main-content"></div>
+</center>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- // SEARCH //////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<style>
+  .rowResults {
+    display: flex;
+		flex-direction: row;
+		justify-content: center;
+		position: relative;
+  }
+</style>
+<div id="searchContent">
+  <center>
+    <div class="fade-in">
+      <h3>Welcome<h3>
+    </div>
+  </center>
+  <div class="fade-in-very-fast">
+    <!--<div style="width: fit-content; display: flex; flex-direction: row;">-->
+      <div class="rowResults">
+        <!--<div style="width:200px;"></div>-->
+        <div style="width:49%;"><div id="results" style="margin-top:25px; margin-left:auto; margin-right: 0; align-self: start;"></div></div><!--width:460px;-->
+        <div style="width:1%;" id="divider-thing"><div id="divider" class="vleftline" style="width: 2px; margin-top: 1.5rem; display: none; margin-left: auto; margin-right: auto;"></div></div> <!---->
+        <div style="width:49%;"><div id="predictions" style="width: fit-content; margin-top:25px; margin-left: 0; margin-right: auto; align-self: start;" ></div></div><!--width:284px;-->
+      </div>
+      <div id="center-msg" style="margin-top: 50px; margin-left: auto; margin-right: auto;">
+        <center>
+          <p class="textFont">Open Source, Nonprofit</p>
+          <p class="textFont">Decentralized AI</p>
+          <p class="textFont">Future Oracle</p>
+          <div id='invite' style="margin-top:76px;">
+            <div style="margin-bottom:4px;" class="textFont">get early access:</div>
+            <input id="earlyAccess" class="textFont" style="width: 200px;text-align: center;border-radius: 25px;" type="text" value="" placeholder="enter email" onchange="saveInterest();">
+          </div>
+        </center>
+      </div>
+  </div>
+</div>
+
+<template id='spinner'>
+  <div class="fade-in-fast">
+    <p class="textFont">...</p>
+  </div>
+</template>
+
+<div id="introArea"></div>
+
+<script>
+  function saveInterest() {
+    var email = document.getElementById('earlyAccess').value;
+    fetch('/early_access/' + email)
+      .then(response => {
+        fillInvite();
+        console.log(response.text());
+    });
+  }
+  function fillInvite() {
+    document.getElementById('invite').innerHTML = (
+      '<div class="fade-in">' +
+      '  <div style="margin-bottom:4px;" class="textFont">Thank you. You will be notified.</div>' +
+      '  <div class="fade-in">' +
+      '    <div style="margin-bottom:16px;" class="textFont">Tell your friends about us or donate to our cause.</div>' +
+      '      <div class="fade-in">' +
+      '        <button class="buttonWithBorder"><a href="https://twitter.com/intent/tweet?text=The%20Satori%20Network%20is%20an%20Open%20Source%2C%20Nonprofit%2C%20Decentralized%20AI%2C%20Oracle%20of%20the%20Future.%20Check%20it%20out.&url=https://www.satorinet.io&hashtags=AI,Blockchain" target="_blank" style="display: inline-block;padding: 10px 20px;background-color: #ffffff;color: black;text-align: center;text-decoration: none;font-size: 20px;border: 2px solid black;border-radius: 100px;cursor: pointer;transition: background-color 0.3s, border-color 0.3s;">Share</a></button>' +
+      '        <button class="buttonWithBorder" style="display: inline-block;padding: 10px 20px;background-color: #ffffff;color: black;text-align: center;text-decoration: none;font-size: 20px;border: 2px solid black;border-radius: 100px;cursor: pointer;transition: background-color 0.3s, border-color 0.3s;" onclick="fillDonate();">Donate</button>' +
+      '        <div id="donateInvite">' +
+      '        </div>' +
+      '      </div>' +
+      '    </div>' +
+      '  </div>' +
+      '</div>');
+  }
+  function fillDonate() {
+    document.getElementById('donateInvite').innerHTML = (
+      '<div class="fade-in" style="margin-top:16px;" >' +
+      '  <p class="textFont">BTC bc1q6cfehh02078fpqa4ccxsnlxcgk6ucmgh5py2jf</p>' +
+      '  <p class="textFont">ETH 0x44e6D7301F3D552Ed97aFF868d966202Bb6FB419</p>' +
+      '  <p class="textFont">RVN RJnd9Hn3T9pJMj9BMyL39qpLfVe9uUeWPM</p>' +
+      '  <p class="textFont">EVR ETtu2aQna2JnU5FA6csVTy6fco4zHjhTcw</p>' +
+      '</div>');
+  }
+  
+  function startVideo() {
+    function getElementAtViewportCenter() {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      return document.elementFromPoint(centerX, centerY);
+    }
+    function clickAtViewportCenter() {
+      const element = getElementAtViewportCenter();
+      if (element) {
+          element.dblclick(); // Simulate a click on the element
+          // Or for more complex scenarios:
+          // const event = new MouseEvent('click', { bubbles: true, cancelable: true });
+          // element.dispatchEvent(event);
+      }
+    }
+    //clickAtViewportCenter();
+    document.getElementById('logo').click();
+  }
+  function dismissScrimAndVideo() {
+    var scrim = document.getElementById('scrim');
+    scrim.style.display = 'none'; // Hide the scrim
+    scrim.remove();
+    //var videoPlayer = document.getElementById('videoPlayer');
+    //videoPlayer.pause(); // Pause the video
+    //videoPlayer.currentTime = 0; // Optional: Rewind the video
+  }
+</script>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- // TEMPLATES ///////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<template id="introTemplate">
+  {% include 'z-intro.html' %}
+</template>
+
+<template id="visionTemplate">
+  {% include 'z-vision.html' %}
+</template>
+
+<template id="roadmapTemplate">
+  {% include 'z-roadmap.html' %}
+</template>
+
+<template id="teamTemplate">
+  {% include 'z-team.html' %}
+</template>
+
+<template id="joinTemplate">
+  {% include 'z-join.html' %}
+</template>
+
+<template id="downloadTemplate">
+  {% include 'z-download.html' %}
+</template>
+
+<template id="tokenomicsTemplate">
+  {% include 'z-tokenomics.html' %}
+</template>
+
+<script>
+  /// when using it in main-content with the others
+  //function showSearch() {
+  //  window.history.pushState('satori', 'Satori', '/');
+  //  var temp = document.getElementById("searchTemplate");
+  //  document.getElementById("main-content").innerHTML = temp.innerHTML;
+  //}
+  /// when using it in it's own block
+  function hideSearch() {
+    document.getElementById("searchContent").style.display = "none";
+  }
+  function showSearch() {
+    window.history.pushState('satori', 'Satori', '/');
+    document.getElementById("main-content").innerHTML = "";
+    document.getElementById("searchContent").style.display = "block";
+  }
+</script>
+<script>
+  function showIntro() {
+    //window.history.pushState('vision', 'Satori Vision', '/vision');
+    var temp = document.getElementById("introTemplate");
+    document.getElementById("introArea").innerHTML = temp.innerHTML;
+  }
+</script>
+<script>
+  function showVision() {
+    hideSearch();
+    window.history.pushState('vision', 'Satori Vision', '/vision');
+    var temp = document.getElementById("visionTemplate");
+    document.getElementById("main-content").innerHTML = temp.innerHTML;
+  }
+</script>
+<script>
+  function showRoadmap() {
+    hideSearch();
+    window.history.pushState('roadmap', 'Satori Roadmap', '/roadmap');
+    var temp = document.getElementById("roadmapTemplate");
+    document.getElementById("main-content").innerHTML = temp.innerHTML;
+  }
+</script>
+<script>
+  function showTeam() {
+    hideSearch();
+    window.history.pushState('team', 'Team Satori', '/team');
+    var temp = document.getElementById("teamTemplate");
+    document.getElementById("main-content").innerHTML = temp.innerHTML;
+  }
+</script>
+<script>
+  function showJoin() {
+    hideSearch();
+    window.history.pushState('join', 'Join Satori', '/join');
+    var temp = document.getElementById("joinTemplate");
+    document.getElementById("main-content").innerHTML = temp.innerHTML;
+  }
+</script>
+<script>
+  function showDownload() {
+    hideSearch();
+    window.history.pushState('download', 'Download Satori', '/download');
+    var temp = document.getElementById("downloadTemplate");
+    document.getElementById("main-content").innerHTML = temp.innerHTML;
+  }
+</script>
+<script>
+  function getAllocation() {
+    fetch('/votes_for/manifest')
+      .then(response => response.json())
+      .then(data => {
+        let allocation = data;
+        document.getElementById('predictorsAllocation').innerHTML = (data.predictors * 100).toFixed(0) + ' %'
+        document.getElementById('oraclesAllocation').innerHTML = (data.oracles * 100).toFixed(0) + ' %'
+        document.getElementById('invitersAllocation').innerHTML = (data.inviters * 100).toFixed(0) + ' %'
+        document.getElementById('managersAllocation').innerHTML = (data.managers * 100).toFixed(0) + ' %'
+        document.getElementById('creatorsAllocation').innerHTML = (data.creators * 100).toFixed(0) + ' %'
+        console.log(allocation);
+      });
+  }
+  function getAuditable() {
+    if (document.getElementById('auditAddress').href.endsWith('#')) {
+      fetch('/association/address')
+        .then(response => response.json())
+        .then(data => {
+          let allocation = data;
+          document.getElementById('auditAddress').href = data.address
+        });
+       
+      }
+    if (document.getElementById('auditToken').href.endsWith('#') || document.getElementById('auditAdminToken').href.endsWith('#')) {
+      fetch('/association/token')
+      .then(response => response.json())
+      .then(data => {
+        let allocation = data;
+        document.getElementById('auditToken').href = data.token
+        document.getElementById('auditAdminToken').href = data.admin
+      });
+    }
+  }
+  function showTokenomics() {
+    hideSearch();
+    window.history.pushState('tokenomics', 'Tokenomics Satori', '/tokenomics');
+    var temp = document.getElementById("tokenomicsTemplate");
+    document.getElementById("main-content").innerHTML = temp.innerHTML;
+    getAllocation();
+    getAuditable();
+  }
+  
+</script>
+<script>
+  showSearch();
+  if ("{{ show }}" == "vision") {
+    showVision();
+  } else if ("{{ show }}" == "roadmap") {
+    showRoadmap();
+  } else if ("{{ show }}" == "team") {
+    showTeam();
+  } else if ("{{ show }}" == "join") {
+    showJoin();
+  } else if ("{{ show }}" == "download") {
+    showDownload();
+  } else if ("{{ show }}" == "tokenomics") {
+    showTokenomics();
+  } else {
+    showSearch();
+  }
+</script>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- // SEARCH Scripts //////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+<script>
+  let search = document.getElementById("search");
+  search.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" || event.key === "Return") {
+        event.preventDefault();
+        eraseResults();
+        showResultsSpinner();
+        erasePredictions();
+        askForSearchResults();
+    }
+  }, false);
+</script>
+
+<script>
+  function showResultsSpinner() {
+    var temp = document.getElementById("spinner");
+    document.getElementById("center-msg").innerHTML = temp.innerHTML;
+  }
+  function showPredictionSpinner() {
+    var temp = document.getElementById("spinner");
+    document.getElementById("predictions").innerHTML = temp.innerHTML;
+  }
+  function eraseResults() {
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("center-msg").innerHTML = "";
+    document.getElementById("divider").style.display = "none";
+  }
+  function erasePredictions() {
+    document.getElementById("predictions").innerHTML = "";
+    document.getElementById("divider").style.display = "none";
+  }
+</script>
+
+<script>
+  var searchResultsOutput = document.getElementById("results");
+  var centerMsgOutput = document.getElementById("center-msg");
+  var searchResultsEvents;
+  function askForSearchResults() {
+    searchResultsEvents = new EventSource("/events/search/" + search.value);
+    searchResultsEvents.onmessage = function (e) {
+      searchResultsEvents.close();
+      let x = parseStreams(e.data);
+      if (!x.includes("No results found")) {
+        centerMsgOutput.innerHTML = "";
+        searchResultsOutput.innerHTML = x        
+        askForPredictionsOf(-1, '[{"prediction": "", "time": "", "avg": "", "ts": ""}]');
+      } else  {
+        searchResultsOutput.innerHTML = "";
+        centerMsgOutput.innerHTML = x;
+      }
+    }
+  }
+  var choicePredictionsOutput = document.getElementById("predictions");
+  var choicePredictionsEvents;
+  function askForPredictionsOf(streamId, override) {
+    document.getElementById("divider").style.display = "block";
+    if (override) {
+      choicePredictionsOutput.innerHTML = parsePredictions(override);
+    } else {
+      choicePredictionsEvents = new EventSource("/events/prediction/" + streamId);
+      choicePredictionsEvents.onmessage = function (e) {
+        choicePredictionsOutput.innerHTML = parsePredictions(e.data);
+        choicePredictionsEvents.close();
+      }
+    }
+  }
+  
+  function parseStreams(data) {
+    const j = JSON.parse(data);
+    let tableText = "";
+    if (j.length == 0) {
+      return '<div class="fade-in-fast" style="margin:50px;"><center><p class="textFont">No results found</p></center></div>';
+    }    
+    for (let i = 0; i < j.length; i++) {
+      tableText += (
+        '<tr class="highlight" style="cursor:pointer;" onclick="askForPredictionsOf(' + j[i].id + ');">' +
+        '<!--<td><p class="textFont">' + j[i].source + '</p></td>-->' +
+        '<td style="text-align: end; cursor:pointer;" tag="' + j[i].stream + '.' + j[i].target + '"><p class="textFont">' + j[i].stream + '.' + j[i].target + '</p></td>' +
+        '</tr>'
+      );
+    }
+    return ('<div class="fade-in-fast table-responsive" style="padding-left:1rem;padding-right:1rem;">'+
+    '  <table class="table align-items-center mb-0">'+
+    '    <thead>'+
+    '      <tr>'+
+    '        <!--<th class="smallTextFontButton text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Source</th>-->'+
+    '        <th class="smallTextFontButton text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="text-align: end;">Topic</th>'+
+    '      </tr>'+
+    '    </thead>'+
+    '    <tbody id="results-table">'
+    ) + tableText + '</tbody></table></div>';
+  }
+  function parsePredictions(data) {
+    const j = JSON.parse(data);
+    let tableText = "";
+    if (j.length == 0) {
+      return (
+        '<div class="fade-in-fast" style="margin-top:30px;"><center>' +
+        '<p class="textFont" style="margin-bottom:50px !important;">No Predictions Found...</p>'+
+        '<p style="margin-bottom:0px !important;"><button class="textFontButton" ><a href="https://satorinet.io/download">Download Satori</a></button></p>'+
+        '<p class="textFont" style="margin-top:6px !important;">and make one</p></center></div>');
+    }
+    for (const element of j) {
+      let time = '';
+      if (element.time !== null && element.time !== '') {
+        time = element.time;
+      } else if (element.when !== null && element.when !== '') {
+        time = element.when;
+      } else {
+        time = element.ts;
+      }
+      console.log('time');
+      console.log(time);
+      console.log(convertUTCToLocal(time));
+      console.log(convertUTCToLocal(time));
+      tableText += (
+        '<tr>' +
+        '<td><p class="textFont" style="font-weight: bold;">' + element.prediction + '</p></td>' +
+        '<td><p class="textFont">' + convertUTCToLocal(time) + '</p></td>' +
+        '</tr>'
+      );
+    }
+    let avg = "";
+    let s = "";
+    if (j.length > 1 && j[0].avg != "None" && j[0].avg != "" && j[0].avg != null) {
+      s = "s";
+      avg = (
+        '<div class="table-responsive" style="padding-left:1rem;padding-right:1rem;">'+
+        '  <table class="table align-items-center mb-0">'+
+        '    <thead>'+
+        '      <tr>'+
+        '        <th class="smallTextFontButton text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Average</th>'+
+        '      </tr>'+
+        '    </thead>'+
+        '    <tbody id="avg-table">'+
+        '      <tr>'+
+        '        <td><p class="textFont" style="font-weight: bold; font-size: large;">' + j[0].avg +  '</p></td>' +
+        '      </tr>'+
+        '    </tbody>'+
+        '  </table>'+
+        '</div>');
+      //avg = '<center><hr/><div class="fade-in-fast"><p class="textFont">' + j[0].avg + '<br/>Average</p></div></center>'
+    }
+    return ('<div class="table-responsive" style="padding-left:1rem;padding-right:1rem;">'+
+    '  <table class="table align-items-center mb-0">'+
+    '    <thead>'+
+    '      <tr>'+
+    '        <th class="smallTextFontButton text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Prediction'+ s +'</th>'+
+    '        <th class="smallTextFontButton text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">When</th>'+
+    '      </tr>'+
+    '    </thead>'+
+    '    <tbody id="predictions-table">'
+    ) + tableText + '</tbody></table></div>' + avg;
+  }
+
+  function convertUTCToLocal(utcTimestamp) {
+    try {
+        // Parse the UTC timestamp into a Date object
+        var date = new Date(utcTimestamp + 'Z'); // Adding 'Z' indicates that this is UTC time
+
+        // Check if the date is valid
+        if (isNaN(date.getTime())) {
+            throw new Error('Invalid date');
+        }
+
+        // Format the date and time in a user-friendly way
+        var options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        return date.toLocaleDateString(undefined, options);
+    } catch (error) {
+        // Return an empty string if an error occurs (e.g., invalid date format)
+        return '';
+    }
+}
+
+
+</script>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- // DOWNLOAD Scripts ////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+<script>
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  if (hasShownIntro === undefined) {
+    sleep(1).then(showIntro);
+    var hasShownIntro = true;
+  }
+  // leads to loop
+  //var startedVideo = false;
+  //if (window.location.pathname === '/' && !startedVideo) {
+  //  sleep(2).then(startVideo);
+  //} 
+  //startedVideo = true;
+</script>
+
+<script>
+  async function toggleDownloadStep(stepName, steps, indicator = null) {
+    const stepElement = document.getElementById(steps);
+    const displayStyle = stepElement.style.display;
+    if (indicator) {
+      document.getElementById(indicator).innerHTML = displayStyle == "none" ? "▼" : "►";
+    }
+    if (displayStyle == "none") {
+      stepElement.style.display = "block";
+      document.getElementById(stepName).scrollIntoView();
+      document.getElementById('downloadContent').style.minHeight = '1200px';
+    } else {
+      stepElement.style.display = "none";
+      //document.getElementById("veryTop").scrollIntoView();
+      document.getElementById(stepName).scrollIntoView();
+      await sleep(500);
+      document.getElementById('downloadContent').style.minHeight = '0px';
+    }
+	}
+</script>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- // TOKENOMICS Scripts //////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<script>
+  function showMintingInfoDefault() {
+    document.getElementById("manifest-info").innerHTML = (
+      "<p>This manifest is controlled by token holders via vote.</p>" +
+      "<p>Miners who support the network in the ways listed below share in the daily rewards though community mining.</p>");
+  }
+  function showMintingInfoRewards() {
+    document.getElementById("manifest-info").innerHTML = ("<p>Rewards corresponds to activity on a daily basis.</p>");
+  }
+  function showMintingInfoPrediction() {
+    document.getElementById("manifest-info").innerHTML = (
+      "<p>Miners who produce and broadcast valuable predictions on the Satori network can earn this reward.</p>"+
+      "<p>Miners compete on accuracy so only the best half of predictions are eligible for this reward.</p>");
+  }
+  function showMintingInfoRelay() {
+    document.getElementById("manifest-info").innerHTML = (
+      "<p>Miners who relay valuable (raw) data to the Satori network can earn this reward.</p>"+
+      "<p>The relayed data must be sanctioned by the Satori network as valuable before it is eligible for reward.</p>");
+  }
+  function showMintingInfoInviter() {
+    document.getElementById("manifest-info").innerHTML = (
+      "<p>Miners who invite predictors or oracles to the Satori network can earn this reward.</p>"+
+      "<p>Inviters need not do valuable work themselves to be elegible for reward.</p>");
+  }
+  function showMintingInfoServers() {
+    document.getElementById("manifest-info").innerHTML = (
+      "<p>The Satori Association manages the Satori servers.</p>"+
+      "<p>The Satori servers support network communication and the Satori's public good (the satorinet.io search engine).</p>");
+  }
+  function showMintingInfoDevelopment() {
+    document.getElementById("manifest-info").innerHTML = (
+      "<p>Satori is constantly improving and needs continual development.</p>"+
+      "<p>Developers that participate in bounties or work for The Satori Association earn these rewards.</p>"
+      );
+  }
+  function removeAnyChartCredits() {
+    let items = document.getElementsByClassName('anychart-credits');
+    for (var i = items.length - 1; i >= 0; --i) {
+      items[i].remove();
+    }
+  }
+  function drawDistributionRate() {
+
+    anychart.onDocumentReady(function () {
+      
+      // add data
+      var data = [
+        ["2024", 0, 0, 100],
+        ["2026", 1000000, 1000000, 100],
+        ["2028", 618034, 1618034, 61.8034],
+        ["2030", 618034, 2236068, 38.1966],
+        ["2032", 527864, 2763932, 23.6068],
+        ["2034", 403252, 3167184, 14.5898],
+        ["2036", 285585, 3452769, 9.016994],
+        ["2038", 192416, 3645185, 5.572809],
+        ["2040", 125547, 3770732, 3.444185],
+        ["2042", 80265, 3850997, 2.1286236],
+        ["2044", 77020, 3928017, 2],
+        ["2046", 78560, 4006577, 2],
+        ["2048", 80132, 4086709, 2],
+      ];
+
+      // create a data set
+      var dataSet = anychart.data.set(data);
+      
+      // map the data for all series
+      var firstSeriesData = dataSet.mapAs({x: 0, value: 1});
+      var secondSeriesData = dataSet.mapAs({x: 0, value: 2});
+      var thirdSeriesData = dataSet.mapAs({x: 0, value: 3});
+      
+      // create a line chart
+      var chart = anychart.line();
+      
+      // create the series and name them
+      var firstSeries = chart.line(firstSeriesData);
+      var secondSeries = chart.line(secondSeriesData);
+      var thirdSeries = chart.line(thirdSeriesData);
+      
+      firstSeries.name("Coin Minted");
+      secondSeries.name("Total Coins");
+      thirdSeries.name("Inflation Rate");
+      
+      firstSeries.stroke("#777777");
+      secondSeries.stroke("#BBBBBB");
+      thirdSeries.stroke("#DDDDDD");
+      
+      // add a legend
+      chart.legend().enabled(true);
+      
+      // add a title
+      chart.title("");
+
+      // specify where to display the chart
+      chart.container("distribution-rate");
+      
+      // format y-axis labels with commas
+      chart.yAxis().labels().format(function () {
+        return this.value.toLocaleString();
+      });
+      
+      //var extraYScale = anychart.scales.linear();
+      //chart.yAxis(1).orientation("right").title("");
+      var yScale = chart.yScale();
+      //yScale.minimum(0);
+      //yScale.maximum(100);
+      yScale.ticks().interval(1000000);
+      //thirdSeries.yScale(extraYScale);
+
+
+      //chart.yAxis(1).orientation("right");
+      
+      
+
+      // draw the resulting chart
+      chart.draw();
+      removeAnyChartCredits();
+      
+    });
+  }
+  drawDistributionRate();
+</script>
+
+<!-- ROADMAP -->
+<script>
+  //document.querySelectorAll('.vtimeline-item').forEach(item => {
+  //  item.addEventListener('click', () => {
+  //    const content = item.querySelector('.vtimeline-content');
+  //    content.classList.toggle('expanded');
+  //  });
+  //});
+  function vtimeline_expand(item) {
+    const content = item.querySelector('.vtimeline-content');
+    content.classList.toggle('expanded');
+  }
+</script>
+{% endblock %}

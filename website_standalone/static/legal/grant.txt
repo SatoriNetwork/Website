@@ -1,0 +1,51 @@
+Grant Agreement
+This Grant Agreement ("Agreement") is made and entered into as of the 25th day of May 2024 ("Effective Date"), by and between The Satori Association ("Grantor") and Wil Bown ("Researcher").
+1. INTRODUCTION
+Parties Involved: This Agreement is between The Satori Association, a Swiss Association entity with its principal place of business at ℅ Helvetia Circle AG, Gotthardstrasse 30, 6300 Zug ("Grantor"), and Wil Bown, an independent researcher with a principal address at 1163 E 400 S Apt B, Salt Lake City, UT 84102 ("Researcher").
+Purpose of the Grant: The purpose of this grant is to support research in the areas of Timeseries Forecasting and GPT Research.
+2. SCOPE OF RESEARCH
+Research Description: The Researcher shall conduct research focused on distributed prediction using a federation of machine learning (ML) models and examining the effects of the latent pool.
+Objectives and Expected Outcomes:
+Integration of the Chronos model and similar models to enhance the accuracy of timeseries forecasting within the Satori Neuron.
+Efficient use of CPU, GPU, and multi-GPU systems.
+Development of additional timeseries predicting GPT models.
+Exploration and development of online learning within the GPT context.
+Advancement of the "latent pool" concept.
+3. GRANT AMOUNT AND PAYMENT TERMS
+Total Grant Amount: The total grant amount is $7,500.
+Payment Schedule: The Grantor shall disburse payments of $2,500 per month for a duration of three (3) months, beginning on the Effective Date.
+Duration: This Agreement shall commence on May 25, 2024, and conclude on August 24, 2024.
+4. REPORTING AND OVERSIGHT
+The Researcher agrees to participate in bi-weekly meetings to discuss progress and challenges.
+The Researcher shall integrate the Chronos model and potentially other models into the Satori Neuron.
+The Researcher shall develop additional timeseries predicting GPT models and document progress.
+5. USE OF FUNDS
+The grant funds are to be used solely for research and development purposes as specified in this Agreement.
+6. INTELLECTUAL PROPERTY RIGHTS
+The Researcher shall retain ownership of all intellectual property developed during the research.
+The Researcher grants The Satori Association perpetual usage rights to any research findings or developments made during the grant period.
+7. CONFIDENTIALITY AND NON-DISCLOSURE
+The parties acknowledge that there is no sensitive information involved in this Agreement.
+8. TERMINATION CONDITIONS
+The Grantor reserves the right to terminate this Agreement at its sole discretion at any time. Upon termination, the Grantor shall provide written notice to the Researcher. The Researcher will be entitled to payment for any research work completed and documented up to the date of termination.
+9. LEGAL COMPLIANCE
+The parties agree to comply with all relevant laws and regulations applicable to the execution and performance of this Agreement.
+10. MISCELLANEOUS
+Governing Law: This Agreement shall be governed by and construed in accordance with the laws of Switzerland.
+Entire Agreement: This Agreement constitutes the entire understanding between the parties with respect to the subject matter hereof and supersedes all prior agreements, negotiations, and discussions between the parties.
+Amendments: Any amendments or modifications to this Agreement must be in writing and signed by both parties.
+Severability: If any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue to be valid and enforceable.
+Notices: Any notices required or permitted under this Agreement shall be in writing and sent to the addresses specified above.
+IN WITNESS WHEREOF, the parties hereto have executed this Grant Agreement as of the Effective Date.
+
+
+
+
+Jordan Miller
+The Satori Association
+
+
+
+
+Wil Bown
+Researcher

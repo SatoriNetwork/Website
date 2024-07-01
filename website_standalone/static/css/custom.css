@@ -1,0 +1,589 @@
+/* NOTE:
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Thin),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.tff") format("tff"),
+  local(ZenMaruGothic Thin);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Light),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.tff") format("tff"),
+  local(ZenMaruGothic Light);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Regular),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Regular.tff") format("tff"),
+  local(ZenMaruGothic Regular);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Medium),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.tff") format("tff"),
+  local(ZenMaruGothic Medium);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Bold),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.tff") format("tff"),
+  local(ZenMaruGothic Bold);
+  font-weight: 700;
+}
+
+
+html {
+  line-height: 1.5;
+  font-family: "Zen Maru Gothic", sans-serif !important;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+p {
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
+}
+
+.navbar .navbar-brand {
+  font-family: "Zen Maru Gothic";
+  font-size: 3rem !important;
+  letter-spacing: .2rem !important;
+  font-weight: 400 !important;
+}
+
+.sidenav-header {
+  height: inherit; 
+}
+
+.bg-gradient-dark {
+  background-image: linear-gradient(195deg, #10051D 0%, #533549 100%);
+}
+.bg-gradient-dark-reverse {
+  background-image: linear-gradient(195deg, #533549 0%, #10051D 100%);
+}
+.bg-gradient-grey {
+  background-image: linear-gradient(195deg, #CFDCE3 0%, #929CA1 100%);
+}
+.bg-gradient-xpurple {
+  background-image: linear-gradient(195deg, #10051D 0%, #45167F 100%);
+}
+.bg-gradient-purple {
+  background-image: linear-gradient(195deg, #533549 0%, #603E55 100%);
+}
+/*.bg-gradient-light-footer { unused
+  background-image: linear-gradient(25deg, #533549 15%, #F6B042 45%, #F9ED4E 95%);
+}*/
+.bg-gradient-primary {
+  background-image: linear-gradient(195deg, #F6B042 0%, #F9ED4E 100%);
+  color:#533549 !important;
+}
+.bg-gradient-primary-reverse {
+  background-image: linear-gradient(195deg, #F9ED4E 0%, #F6B042 100%);
+}
+.bg-gradient-primary-reverse3 {
+  background-image: linear-gradient(195deg, #F9ED4E 0%, #F8DE4B 100%);
+}
+.bg-gradient-primary-reverse2 {
+  background-image: linear-gradient(195deg, #F8DE4B 0%, #F8CF48 100%);
+}
+.bg-gradient-primary-reverse1 {
+  background-image: linear-gradient(195deg, #F8CF48 0%, #F7BF45 100%);
+}
+.bg-gradient-primary-reverse0 {
+  background-image: linear-gradient(195deg, #F7BF45 0%, #F6B042 100%);
+}
+.bg-gradient-primary-reverse3 i {
+  color: #c78c98 !important;
+}
+.bg-gradient-primary-reverse2 i {
+  color: #9e7187 !important;
+}
+.bg-gradient-primary-reverse1 i {
+  color: #875677 !important;
+}
+.bg-gradient-primary-reverse0 i {
+  color: #533549 !important;
+}
+.bg-gradient-primary-reverse4 {
+  background-image: linear-gradient(195deg, #F8DE4B 0%, #F8CF48 100%);
+}
+.bg-gradient-primary-reverse4 i {
+  color: #9e7187 !important;
+}
+
+.bg-gradient-primary-reverse i {
+  color: #533549 !important;
+  position: relative;
+}
+.bg-gradient-primary-reverse p {
+  color: #533549 !important;
+  position: relative;
+}
+.bg-gradient-yellow {
+  background-image: linear-gradient(195deg, #F9ED4E 0%, #F4EB86 100%);
+  color:#533549 !important;
+}
+.bg-gradient-orange {
+  background-image: linear-gradient(195deg, #F8C947 0%, #F6B042 100%);
+  color:#533549 !important;
+}
+.bg-gradient-green3 {
+  background-image: linear-gradient(195deg, #e3ffa1 0%, #bdd486 100%);
+  color:#533549 !important;
+}
+.bg-gradient-green2 {
+  background-image: linear-gradient(270deg, #C0D889 0%, #94a669 100%);
+  color:#533549 !important;
+}
+.bg-gradient-green1 {
+  background-image: linear-gradient(270deg, #94a669 0%, #788755 100%);
+  color:#533549 !important;
+}
+.bg-gradient-green {
+  background-image: linear-gradient(270deg, #788755 0%, #495335 100%);
+  color:#533549 !important;
+}
+.bg-gradient-grey3 {
+  background-image: linear-gradient(195deg, #d9d4d0 0%, #bfbbb7 100%);
+  color:#533549 !important;
+}
+.bg-gradient-grey2 {
+  background-image: linear-gradient(270deg, #bfbbb7 0%, #9c9895 100%);
+  color:#533549 !important;
+}
+.bg-gradient-grey1 {
+  background-image: linear-gradient(270deg, #9c9895 0%, #827f7c 100%);
+  color:#533549 !important;
+}
+.bg-gradient-grey {
+  background-image: linear-gradient(270deg, #827f7c 0%, #636261 100%);
+  color:#533549 !important;
+}
+
+.bg-gradient-lightpurple3 {
+  background-image: linear-gradient(195deg, #c78c98 0%, #9e7187 100%);
+  color:#533549 !important;
+}
+.bg-gradient-lightpurple2 {
+  background-image: linear-gradient(270deg, #9e7187 0%, #875677 100%);
+  color:#533549 !important;
+}
+.bg-gradient-lightpurple1 {
+  background-image: linear-gradient(270deg, #875677 0%, #6d3059 100%);
+  color:#533549 !important;
+}
+.bg-gradient-lightpurple {
+  background-image: linear-gradient(270deg, #6d3059 0%, #533549 100%);
+  color:#533549 !important;
+}
+.bg-gradient-lightgrey {
+  background-image: linear-gradient(180deg, #ffffff 0%, #d2d2d2 100%);
+}
+.bg-gradient-bluegreen3 {
+  background-image: linear-gradient(195deg, #af9da1 0%, #89707c 100%);
+  color:#533549 !important;
+}
+.bg-gradient-bluegreen2 {
+  background-image: linear-gradient(180deg, #89707c 0%, #6c5363 100%);
+  color:#533549 !important;
+}
+.bg-gradient-bluegreen1 {
+  background-image: linear-gradient(180deg, #6c5363 0%, #744464 100%);
+  color:#533549 !important;
+}
+.bg-gradient-bluegreen {
+  background-image: linear-gradient(180deg, #355349 0%, #355349 100%);
+  color:#533549 !important;
+}
+.text-success {
+  color: #82c7ab !important;
+}
+.text-danger {
+  color: #d68461 !important;
+}
+.bg-gradient-blue {
+  background-image: linear-gradient(195deg, #82c7ab 0%, #4f95a6 100%);
+  /*color:#533549 !important;*/
+}
+.bg-gradient-blue0 {
+  color: linear-gradient(195deg, #447f8c 0%, #35646e 100%);
+}
+.bg-gradient-blue1 {
+  color: linear-gradient(195deg, #4c8f9e 0%, #447f8c 100%);
+}
+.bg-gradient-blue2 {
+  color: linear-gradient(195deg, #559fb0 0%, #4c8f9e 100%);
+}
+.bg-gradient-blue3 {
+  color: linear-gradient(195deg, #61b6c9 0%, #559fb0 100%);
+}
+.bg-gradient-primary-reverse i {
+  color: #533549 !important;
+  position: relative;
+}
+.color-blue0 {
+  color: #447f8c;
+}
+.color-blue1 {
+  color: #4c8f9e;
+}
+.color-blue2 {
+  color: #559fb0;
+}
+.color-blue3 {
+  color: #61b6c9;
+}
+.bg-gradient-idk2 {
+  background-image: linear-gradient(195deg, #cfe691 0%, #82c7ab 100%);
+  color:#533549 !important;
+}
+.bg-gradient-idk1 {
+  background-image: linear-gradient(195deg, #eba091 0%, #c78477 100%);
+  color:#533549 !important;
+}
+.bg-gradient-idk {
+  background-image: linear-gradient(195deg, #e1fa9e 0%, #649c88 100%);
+  color:#533549 !important;
+}
+.bg-gradient-drastic {
+  background-image: linear-gradient(195deg, #533549 0%, #F6B042 100%);
+}
+.bg-gradient-less-drastic {
+  background-image: linear-gradient(195deg, #744E48 0%, #533549 100%);
+}
+.bg-gradient-drastic-reverse {
+  background-image: linear-gradient(195deg, #F6B042 0%, #533549 100%);
+}
+.bg-gradient-drastic-reverse i {
+  color: #F9ED4E !important;
+}
+.bg-gradient-less-drastic-reverse {
+  background-image: linear-gradient(195deg, #af9da1 0%, #3d2735 100%);
+}
+
+.shadow-dark {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(16, 5, 29, 0.2) !important;
+}
+.shadow-primary {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(249, 237, 78, .6) !important;
+}
+.shadow-primary-reverse {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(246, 176, 66, 0.5) !important;
+}
+.shadow-drastic {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(210, 210, 210, 0.4) !important;
+}
+.shadow-xpurple {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(16, 5, 29, 0.4) !important;
+}
+.shadow-purple {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(210, 210, 210, 0.4) !important;
+}
+.shadow-orange {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(246, 176, 66, 0.5) !important;
+}
+.shadow-yellow {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(249, 237, 78, .6) !important;
+}
+
+.sidenav .collapse .nav-item .nav-link.active {
+  color: #533549 !important;
+}
+.sidenav .collapse .nav-item .nav-link.active i {
+  color: #533549 !important;
+}
+
+
+/* older version: */
+
+.gradient-45deg-xiketic-purple {
+  background: #10051D;
+  background: -webkit-linear-gradient(45deg, #10051D 15%, #533549 85%);
+  background: linear-gradient(45deg, #10051D 10%, #533549 90%);
+}
+.gradient-45deg-xiketic-purple.gradient-shadow {
+  box-shadow: 0 6px 20px 0 rgba(83, 53, 73, 0.5);
+}
+
+.gradient-45deg-xiketic-orange {
+  background: #10051D;
+  background: -webkit-linear-gradient(45deg, #10051D 15%, #F6B042 85%);
+  background: linear-gradient(45deg, #10051D 10%, #F6B042 90%);
+}
+.gradient-45deg-xiketic-orange.gradient-shadow {
+  box-shadow: 0 6px 20px 0 rgba(246, 176, 66, 0.5);
+}
+
+.gradient-45deg-xiketic-lemon {
+  background: #10051D;
+  background: -webkit-linear-gradient(45deg, #10051D 15%, #F9ED4E 85%);
+  background: linear-gradient(45deg, #10051D 10%, #F9ED4E 90%);
+}
+.gradient-45deg-xiketic-lemon.gradient-shadow {
+  box-shadow: 0 6px 20px 0 rgba(249, 237, 78, 0.5);
+}
+
+.gradient-45deg-purple-orange {
+  background: #533549;
+  background: -webkit-linear-gradient(45deg, #533549 15%, #F6B042 85%);
+  background: linear-gradient(45deg, #533549 10%, #F6B042 90%);
+}
+.gradient-45deg-purple-orange.gradient-shadow {
+  box-shadow: 0 6px 20px 0 rgba(246, 176, 66, 0.5);
+}
+
+.gradient-45deg-purple-lemon {
+  background: #533549;
+  background: -webkit-linear-gradient(45deg, #533549 15%, #F9ED4E 85%);
+  background: linear-gradient(45deg, #533549 10%, #F9ED4E 90%);
+}
+.gradient-45deg-purple-lemon.gradient-shadow {
+  box-shadow: 0 6px 20px 0 rgba(249, 237, 78, 0.5);
+}
+
+.gradient-45deg-orange-lemon {
+  background: #F6B042;
+  background: -webkit-linear-gradient(45deg, #F6B042 15%, #F9ED4E 85%);
+  background: linear-gradient(45deg, #F6B042 10%, #F9ED4E 90%);
+}
+.gradient-45deg-orange-lemon.gradient-shadow {
+  box-shadow: 0 6px 20px 0 rgba(249, 237, 78, 0.5);
+}
+
+.gradient-45deg-purple-orange-lemon {
+  background: #533549;
+  background: -webkit-linear-gradient(45deg, #533549 15%, #F6B042 30%, #F9ED4E 55%);
+  background: linear-gradient(25deg, #533549 15%, #F6B042 45%, #F9ED4E 95%);
+}
+/*.gradient-45deg-purple-orange-lemon.gradient-shadow {
+  box-shadow: 0 6px 20px 0 rgba(249, 237, 78, 0.5);
+}*/
+
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  z-index: 1000;
+}
+
+.overlayWhite {
+  position: absolute; 
+  bottom: 0; 
+  background: rgba(255, 255, 255, 0.5); /* White see-through */
+  color: #533549; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:1;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  z-index: 1000;
+}
+
+.overlayBlack {
+	position: absolute; 
+	bottom: 0; 
+	background: rgba(0, 0, 0, 0.8); /* Black see-through */
+	width: 100%;
+	transition: .5s ease;
+	opacity:1;
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+	height: 100%;
+	z-index: 10000;
+}
+  
+
+.yellow-hover:hover {
+  background: linear-gradient(90deg, rgb(246, 176, 66, .5) 0%, rgb(249, 237, 78, .5) 100%);
+}
+td:first-child {
+  border-radius: 0.5rem  0 0 0.5rem ;
+}
+td:last-child {
+  border-radius: 0 0.5rem 0.5rem  0;
+}
+.mt-3 {
+  margin-top: 2rem !important;
+}
+
+.container-for-center {
+  position: relative;
+}
+
+.vertical-center {
+  margin: 0;
+  /*position: absolute;*/
+  top: 42%;
+}
+
+.dark-mode {
+    background: black;
+    filter: invert(100%);
+}
+
+.image-blurred-edge {
+    /*background-image: url('http://lorempixel.com/200/200/city/9');*/
+    width: 200px;
+    height: 200px;
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 0 0 8px 8px white inset;
+}
+
+.vid-container {
+	max-width: 514px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.vid-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding-top: 56.25%;
+} 
+.vid-container iframe {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+} 
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #adb5bd;
+  opacity: 1;
+}
+
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #adb5bd;
+  opacity: 1;
+}
+
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #adb5bd;
+  opacity: 1;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+  color: #adb5bd;
+  opacity: 1;
+}
+a {
+  cursor: pointer;
+}
+input::placeholder {
+  color: #adb5bd;
+  opacity: 1;
+}
+.buttonWithBorder {
+  display: inline-block; /* Allows the <a> tag to be styled like a button */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #ffffff; /* Twitter's brand color, change as desired */
+  color: black; /* Text color, change as desired */
+  text-align: center;
+  text-decoration: none; /* Removes underline from the link */
+  font-size: 16px; /* Adjust font size as needed */
+  border: 2px solid black; /* Border width, style, and color */
+  border-radius: 25px; /* Rounded edges */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+}
+
+.buttonWithBorder:hover {
+  color: #212529; /* Darker shade for hover effect, adjust as needed */
+  border-color: #212529; /* Border color change on hover, adjust as needed */
+}
+
+.fading-divider {
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, transparent 25%, #555 50%, transparent 75%, transparent);
+}
+
+.rounded-divider {
+  width: 14.6%;
+  height: 2px;
+  background-color: #777;
+  border-radius: 2px;
+}
+
+/* Use fixed positioning 
+#scrim {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+#videoPlayer {
+  max-width: 90%;
+  max-height: 90%;
+}
+*/
+
+
+/* video overlay edges
+div {
+  position: relative;
+}
+
+.vid-before-before {
+	position: relative;
+}
+.vid-before::before {
+	position: absolute;
+  width: 560px;
+  height: 315px;
+  content: '';
+  z-index: 2;
+  box-shadow: inset 0px 0px 10px 10px white, inset 0px 0px 20px 20px white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+.video {
+  display: block;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto !important;
+}
+  */

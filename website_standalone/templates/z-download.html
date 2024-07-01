@@ -1,0 +1,195 @@
+<center>
+    <div id="downloadContent" class="fade-in" style='min-height: 0px;'>
+		<p style='margin-top:50px;' class="textFont">Satori runs inside of docker, isolated from the rest of the machine.</p>
+		<p style='margin-bottom: 50px;' class="textFont">Here are the steps to run Satori:</p>
+		<div class="fade-in-very-fast">
+			<div id="step1" class="row"  style="margin-top:4rem;">
+				<div class="col-sm-12">
+					<button class="textFontButton" onclick="toggleDownloadStep('step1', 'step1steps', 'step1indicator')"><a href="#" onClick="return false;"><span id='step1indicator'>►</span> 1. Download and Install Docker</a></button>	
+					<div id="step1steps" style="display: none;">
+						<div class="fade-in-very-fast">
+							<img src="{{ url_for('static', filename='img/icons/docker.256x184.png') }}" style="margin-top:2rem;margin-bottom:2rem;" width=64 height=46 title='install docker' class="resize-on-med-and-down link-immatation-hover" alt="click to download docker from docker.com" />
+							<button class="textFontButton" style="margin-top:2rem;margin-bottom:2rem;"><a href="https://www.docker.com/products/docker-desktop/" target="_blank">click here to Download Docker</a></button>
+							<p class="textFont">after installing, set Docker to run on startup:</p>
+							<img src="{{ url_for('static', filename='img/screenshots/docker-settings.png') }}" style="margin:10px;border: .1rem solid black;border-radius: .3rem;" width=710 height=527 title='docker settings' class="resize-on-med-and-down" alt="access docker settings" />
+							<img src="{{ url_for('static', filename='img/screenshots/docker-startup.png') }}" style="margin:10px;border: .1rem solid black;border-radius: .3rem;" width=710 height=527  title='run on startup' class="resize-on-med-and-down" alt="set docker to run on startup" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="step2" class="row" style="margin-top:3rem;">
+				<div class="col-sm-12">
+					<button class="textFontButton" onclick="toggleDownloadStep('step2', 'step2steps', 'step2indicator')"><a href="#" onClick="return false;"><span id='step2indicator'>►</span> 2. Download and Install Satori</a></button>
+					<div id="step2steps" style="display: none;">
+						<div class="fade-in-very-fast">
+							<p style="margin-top:2rem;font-weight: 100;margin-left: 3rem;margin-right: 3rem;margin-bottom: 2rem;font-size: x-small;" class="textFont">By downloading Satori you acknowledge and agree to the following: <br>
+								<a class="cursor-pointer" style="font-size: xx-small;" href="/static/legal/neuron/eula.txt" target="_blank">End User License Agreement</a><span style="font-size: xx-small;">,</span> 
+								<a class="cursor-pointer" style="font-size: xx-small;" href="/static/legal/neuron/privacy-policy.txt" target="_blank">Privacy Policy</a><span style="font-size: xx-small;">,</span>
+								<a class="cursor-pointer" style="font-size: xx-small;" href="/static/legal/neuron/terms-of-service.txt" target="_blank">Terms of Service</a><span style="font-size: xx-small;">,</span>
+								<a class="cursor-pointer" style="font-size: xx-small;" href="/static/legal/neuron/disclaimer.txt" target="_blank">Disclaimer of Warranties</a><span style="font-size: xx-small;">,</span>
+								<a class="cursor-pointer" style="font-size: xx-small;" href="/static/legal/neuron/open.txt" target="_blank">Open Source Notice</a><span style="font-size: xx-small;">,</span>
+								<a class="cursor-pointer" style="font-size: xx-small;" href="/static/legal/neuron/token.txt" target="_blank">Token Use Policy</a>
+							</p>
+							<div class="rounded-divider" style='margin-bottom:50px;width: 14.6%;height: 2px;background-color: #777;border-radius: 2px;'></div>
+							<div class="row" style="margin-top:2rem;">
+								<div class="col-sm-4">
+									<a href="{{ url_for('static', filename='download/windows/satori.exe') }}" target="_blank">
+										<i id="downloadWindowsIcon" class="fa fa-windows fa-10x cursor-pointer link-immatation-hover" aria-hidden="true"  sytle="color: black;"
+											onmouseover="document.getElementById('downloadWindowsIcon').style.color = '#F6B042';document.getElementById('downloadWindowsWord').style.color = '#F6B042';" 
+											onmouseleave="document.getElementById('downloadWindowsIcon').style.color = 'black';document.getElementById('downloadWindowsWord').style.color = 'black';"
+										></i>
+										<p id="downloadWindowsWord" class="textFont cursor-pointer"
+											onmouseover="document.getElementById('downloadWindowsIcon').style.color = '#F6B042';document.getElementById('downloadWindowsWord').style.color = '#F6B042';" 
+											onmouseleave="document.getElementById('downloadWindowsIcon').style.color = 'black';document.getElementById('downloadWindowsWord').style.color = 'black';"
+										>click here for Windows</p>
+									</a>
+									<p style='margin-top:1rem;' class="textFont cursor-pointer" onclick="toggleDownloadStep('step2asteps', 'step2asteps', 'step2aindicator')">
+										<a href="#" onClick="return false;"><span id='step2aindicator'>►</span> OR use the Build Instructions...</a>
+									</p>
+									<div id="step2asteps" style="display: none;">
+										<p style='margin-top:10px;' class="textFont">
+											PowerShell: (Python 3.7+ required) <br>
+											<code style="margin-left:10px;margin-top:10px;text-align: start; display: block; color: darkgrey;">
+												echo "installing dependencies..."<br>
+												pip install requests==2.31.0<br>
+												pip install aiohttp==3.8.4<br>
+												pip install satorisynapse<br>
+												<br>
+												echo "creating Satori folders..."<br>
+												python -c "import os; path = os.path.join(os.environ.get('APPDATA', 'C:\\'), 'Satori'); for folder in ['config', 'data', 'models', 'wallet']: os.makedirs(os.path.join(path, folder), exist_ok=True)"<br>
+												<br>
+												{% if ref is defined and ref %}
+												echo "saving referral..."<br>
+												python -c "import os; path = os.path.join(os.environ.get('APPDATA', 'C:\\'), 'Satori', 'config', 'referral.txt'); open(path, mode='w').write('{{ ref }}')"<br>
+												<br>
+												{% endif %}
+												echo "setting Satori to run on startup..."<br>
+												python -c """import os; import threading; path = os.path.join(os.environ['APPDATA'], r'Microsoft\Windows\Start Menu\Programs\Startup'); with open(os.path.join(path, 'satori.bat'), 'w') as f: f.write('start "docker" "C:\Program Files\Docker\Docker\Docker Desktop.exe" && start docker pull satorinet/satorineuron:latest && start python -m satorisynapse.async && timeout /T 60 /nobreak > NUL && docker run --rm -it --name satorineuron -p 24601:24601 -v %APPDATA%\\Satori\\wallet:/Satori/Neuron/wallet -v %APPDATA%\\Satori\\config:/Satori/Neuron/config -v %APPDATA%\\Satori\\data:/Satori/Neuron/data -v %APPDATA%\\Satori\\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:latest ./start.sh')"""<br>
+												<br>
+												echo "starting Docker..."<br>
+												Start-Process -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe" -WindowStyle Minimized<br>
+												docker pull satorinet/satorineuron:latest<br>
+												<br>
+												echo "starting Satori p2p relay..."<br>
+												Start-Job -ScriptBlock { python -m satorisynapse.run async }<br>
+												<br>
+												echo "starting Satori..."<br>
+												docker run --rm -it --name satorineuron -p 24601:24601 -v ${env:APPDATA}\Satori\wallet:/Satori/Neuron/wallet -v ${env:APPDATA}\Satori\config:/Satori/Neuron/config -v ${env:APPDATA}\Satori\data:/Satori/Neuron/data -v ${env:APPDATA}\Satori\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:latest ./start.sh<br>
+											</code>
+										</p>
+									</div>
+									<p style="margin-bottom:5px;font-weight: 700;" class="textFont">"Allow" Satori traffic through Windows Firewall</p>
+								</div>
+								<div class="col-sm-4">
+									<a href="{{ url_for('static', filename='download/mac/Satori.dmg') }}" target="_blank">
+										<i id="downloadMacIcon" class="fa fa-apple fa-10x cursor-pointer link-immatation-hover" sytle="color: black;"
+											onmouseover="document.getElementById('downloadMacIcon').style.color = '#F6B042';document.getElementById('downloadMacWord').style.color = '#F6B042';" 
+											onmouseleave="document.getElementById('downloadMacIcon').style.color = 'black';document.getElementById('downloadMacWord').style.color = 'black';"
+										></i>
+										<p id="downloadMacWord" class="textFont cursor-pointer" 
+											onmouseover="document.getElementById('downloadMacIcon').style.color = '#F6B042';document.getElementById('downloadMacWord').style.color = '#F6B042';" 
+											onmouseleave="document.getElementById('downloadMacIcon').style.color = 'black';document.getElementById('downloadMacWord').style.color = 'black';"
+										>click here for Mac</p>
+									</a>
+									<p style='margin-top:10px;' class="textFont cursor-pointer" onclick="toggleDownloadStep('step2csteps', 'step2csteps', 'step2cindicator')">
+										<a href="#" onClick="return false;"><span id='step2cindicator'>►</span> OR download and install using the terminal:</a>
+									</p>
+									<div id="step2csteps" style="display: none;">
+										<p>
+											<code style="margin-top:10px;text-align: start; display: block; color: darkgrey;">
+												cd ~<br>
+												curl -o ~/satori.zip https://satorinet.io/static/download/mac/satori.zip<br>
+												unzip ~/satori.zip<br>
+												rm ~/satori.zip<br>
+												cd ~/.satori<br>
+												{% if ref is defined and ref %}
+												mkdir ./config
+												echo {{ ref }} >> ./config/referral.txt<br>
+												{% endif %}
+												/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+												xcode-select --install<br>
+												brew install xz<br>
+												brew install python<br>
+												brew install pyenv<br>
+												pyenv install 3.12.4<br>
+												bash install.sh<br>
+												bash install_service.sh<br>
+											</code>
+										</p>
+									</div>
+									<p style='margin-bottom:5px;font-weight: 700;' class="textFont">
+										**control-click the Satori icon and select "Open"**<br>
+										**control-click the Satori icon in the dock and click "Options" > "Open at Login"**
+									</p>
+								</div>
+								<div class="col-sm-4">
+									<a href="{{ url_for('static', filename='download/linux/satori.zip') }}" target="_blank">
+										<i id="downloadLinuxIcon" class="fa fa-linux fa-10x cursor-pointer link-immatation-hover" sytle="color: black;"
+											onmouseover="document.getElementById('downloadLinuxIcon').style.color = '#F6B042';document.getElementById('downloadLinuxWord').style.color = '#F6B042';" 
+											onmouseleave="document.getElementById('downloadLinuxIcon').style.color = 'black';document.getElementById('downloadLinuxWord').style.color = 'black';"
+										></i>
+										<p id="downloadLinuxWord" class="textFont cursor-pointer" 
+											onmouseover="document.getElementById('downloadLinuxIcon').style.color = '#F6B042';document.getElementById('downloadLinuxWord').style.color = '#F6B042';" 
+											onmouseleave="document.getElementById('downloadLinuxIcon').style.color = 'black';document.getElementById('downloadLinuxWord').style.color = 'black';"
+										>click here for Linux</p>
+									</a>
+									<p style='margin-top:1rem;' class="textFont cursor-pointer" onclick="toggleDownloadStep('step2bsteps', 'step2bsteps', 'step2bindicator')">
+										<a href="#" onClick="return false;"><span id='step2bindicator'>▼</span> OR download and install using the terminal:</a>
+									</p>
+									<div id="step2bsteps" style="display: block;">
+										<p>
+											<code style="margin-top:10px;text-align: start; display: block; color: darkgrey;">
+												cd ~<br>
+												wget -P ~/ https://satorinet.io/static/download/linux/satori.zip<br>
+												unzip ~/satori.zip<br>
+												rm ~/satori.zip<br>
+												cd ~/.satori<br>
+												{% if ref is defined and ref %}
+												mkdir ./config
+												echo {{ ref }} >> ./config/referral.txt<br>
+												{% endif %}
+												sudo apt-get install python3-venv -y<br>
+												bash install.sh<br>
+												bash install_service.sh<br>
+											</code>
+										</p>
+									</div>
+									<p style='margin-bottom:5px;font-weight: 700;' class="textFont">
+										follow the instructions in readme.md file
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="step3" class="row" style="margin-top:3rem;">
+				<div class="col-sm-12">
+					<button class="textFontButton" onclick="toggleDownloadStep('step3', 'step3steps', 'step3indicator')"><a href="#" onClick="return false;"><span id='step3indicator'>►</span> 3. Setup Your Vault</a></button>	
+					<div id="step3steps" style="display: none;">
+						<div class="fade-in-very-fast">
+							<p class="textFont" style='margin-top:2rem;'>Setup your vault password (and do not forget it), then, for maximum security, enable the Mine-to-Vault feature:</p>
+							<img src="{{ url_for('static', filename='img/screenshots/satori-vault-setup1.png') }}" style="margin:10px;border: .1rem solid black;border-radius: .3rem;" width=1306 height=588 title='setup vault' class="resize-on-med-and-down" alt="setup the vault password" />
+							<img src="{{ url_for('static', filename='img/screenshots/satori-vault-setup2-obvious.png') }}" style="margin:10px;border: .1rem solid black;border-radius: .3rem;" width=1306 height=588  title='enable mine-to-vault' class="resize-on-med-and-down" alt="enable the mine-to-vault feature for more security" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="step4" class="row" style="margin-top:3rem;">
+				<div class="col-sm-12">
+					<button class="textFontButton" onclick="toggleDownloadStep('step4', 'step4steps', 'step4indicator')"><a href="#" onClick="return false;"><span id='step4indicator'>►</span> 4. Keep Satori Running</a></button>	
+					<div id="step4steps" style="display: none;">
+						<div class="fade-in-very-fast">
+							</br>
+							<p class="textFont">Satori will run in the background constantly broadcasting predictions about of the future, generating Satori Token while it runs.</p>
+							<p class="textFont">If you need to pause the Satori AI Engine while you use the computer, you can easily do so on the Satori dashboard.</p>
+							</br>
+							<img src="{{ url_for('static', filename='img/screenshots/satori-pause-big.png') }}" width=1251 height=683 title='how to pause Satori' class="resize-on-med-and-down" alt="how to pause Satori" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</center>
+
