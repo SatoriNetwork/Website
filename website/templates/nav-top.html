@@ -1,0 +1,67 @@
+<div id="veryTop" class="fade-in-very-fast">
+  <div style="width: -webkit-fill-available; display: flex; flex-direction: row;">
+    <div style="margin-left: 10px !important; align-self: start;">
+	    <div style='width: fit-content;min-width: max-content;'>
+		    <a href="{{ url_for('search') }}" style="cursor: pointer;">
+				  <h1
+            id='logo'
+            style='color: black; font-size: 25px; margin-top: 0px; margin-bottom: 0px;'
+            class="logoFont"
+            onclick="showSearch()">
+		        Sat<img
+              src="{{ url_for('static', filename='site/enso.png') }}"
+              alt="Satori"
+              width="12.5"
+              height="12.5"
+            >ri
+          </h1>
+        </a>
+	    </div>
+    </div>
+    <button class="smallTextFontButton" id='myneuron' style="margin-right:0px !important;display:none;"><a href="http://127.0.0.1:24601" target="_blank">My Neuron</a></button>
+    <div style="margin-left: auto; align-self: end;">
+      <button class="smallTextFontButton" onclick="showVision()" style="margin-right:0px !important;">Vision</button>
+      <button class="smallTextFontButton" onclick="showRoadmap()" style="margin-right:0px !important;">Roadmap</button>
+      <button class="smallTextFontButton" onclick="showTokenomics();drawDistributionRate();" style="margin-right:0px !important;">Tokenomics</button>
+      <button class="smallTextFontButton" onclick="showTeam()" style="margin-right:0px !important;">Team</button>
+      <button class="smallTextFontButton" onclick="showJoin()" style="margin-right:0px !important;">Join</button>
+      <button class="smallTextFontButton" onclick="showDownload()" style="margin-right:0px !important;">Download</button>
+      <button class="smallTextFontButton" onclick="toggleDarkMode();" >
+        <img
+        src="{{ url_for('static', filename='img/icons/yinyang.png') }}"
+        style="margin-right: 6px;"
+        alt="Dark Mode"
+        width="14"
+        height="14">
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+	function toggleDarkMode() {
+		// adds but has no effect
+		//document.documentElement.classList.toggle('dark-mode');
+		let entireBody = document.getElementById('entire-body');
+		if (entireBody.style.backgroundColor == "black") {
+			entireBody.style.backgroundColor = "white";
+			entireBody.style.filter = "invert(0%)";
+		} else {
+			entireBody.style.backgroundColor = "black";
+			entireBody.style.filter = "invert(100%)";
+		}
+
+	}
+</script>
+<script>
+	window.addEventListener('load', function() {
+		fetch('http://127.0.0.1:24601/ping')
+			.then(response => {
+				if (response.ok) {
+					document.getElementById('myneuron').style.display = 'block';
+				}
+			})
+			.catch(error => {
+				console.error('Neuron server not detected:', error);
+			});
+	});
+	</script>

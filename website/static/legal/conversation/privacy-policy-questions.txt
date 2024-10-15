@@ -1,0 +1,32 @@
+Here are your questions concerning the Privacy Policy and my answers. (as always include as much detail as you feel necessary or useful, tending towards minimizing potential liability):
+
+-A brief statement about your commitment to user privacy.
+can you write one? we aren't going to sell it or anything. we don't even associate any data from them with their name or any form of traditional identification. we don't even want to know who they are.
+
+- What types of information do you collect from users?
+The Software collects the public keys and addresses of the wallets it generates itself which are used to identify the activities of this instance of the Software on the Satori Network.
+The Software collects public IP addresses and simplified metrics about the hardware it is running on, such as CPU, memory, and disk space, to optimize its performance.
+The Software collects the predictions it creates, and any data the User voluntarily shares with the Software and the network as an oracle (data provider).
+
+- How do you use the collected information?
+The Software collects publically available public ip address information to potentially detect whether the user has been referred to download The Software by someone else or not.
+The Software collects hardware metrics to optimize its performance locally on the machine. As a perinant example, a large part of that optimization relates to the nature and quantitiy of the data streams it subscribes to (and therefore predicts), and what kind machine learning algorithms it uses to produce predictions about said data streams.
+
+- Do you share user information with third parties? If so, who and for what purposes?
+The Software does not share user information with third parties. The user should be aware, however, that the predictions the Software produces, and the data provided by the user as an oracle, are shared openly and freely with the Satori Network, which being free and open is potentially available to anyone in the world. Being thus warned, the user should only share oracle data intended for public consumption.
+
+- What measures do you take to protect user information?
+We've provided a secure connection to the Satori Network, and we've taken measures to ensure that the Software is not vulnerable to common security threats. We've also taken steps to ensure that the Software does not collect any information that could be used to identify the user.
+
+- What rights do users have regarding their data? (E.g., access, correction, deletion.)
+The user has the right to access, correct, and delete their data. The user can access their data by using the Software's built-in tools, and they can correct or delete their data by contacting us directly.
+
+- How long do you retain user information?
+The Software retains user information indefinitely, unless otherwise directed. It should be noted, however, that not even usernames or password hashes are stored or even accepted by the Software, and that the Software does not collect any information that could be used to identify the human user.
+
+- How will you notify users of changes to the Privacy Policy?
+Any changes to the Privacy Policy will be posted on the Software's website or in the Software itself as a banner on the dashboard of the user interface.
+
+- Contact Information:
+The Satori Association
+privacy@satorinet.io

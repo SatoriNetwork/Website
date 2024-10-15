@@ -1,0 +1,56 @@
+Here are the questions you asked, and my answers in order to help inform how to write the End User License Agreement (EULA). Keep in mind that I want something simple and from my perspective the whole point of these legal documents is to minimize my risk and legal exposure. I don't want to be able to be held liable for anything.
+
+- What is the name of the software?
+"Satori" or more specifically, since "Satori" is also the name of the project which encompases more than this software, the "Satori Neuron" or  ("Satori" is the name of the icon, and shows up on the UI, "the Satori Neuron" is more of a colloquial term, like saying "download the Satori App")
+
+- Briefly describe the software’s purpose and functionality.
+The Satori neuron subscribes to some real-world data streams and makes predictions about the future of those data streams. It often shares those predictions with other Satori neurons, forming a future predicting network.
+
+
+- Is the software licensed or sold?
+Licensed (the open source code already has an MIT license included in the open source code)
+
+(both of the following questions are answered below)
+- What specific obligations or restrictions will users have (e.g., no reverse engineering, no redistribution)?
+- Are there any restrictions on the license (e.g., non-transferable, limited use)?
+No Reverse Engineering: Users are prohibited from reverse engineering, decompiling, or disassembling the software.
+No Redistribution: Users cannot distribute copies of the software to others.
+Network Integrity: Users must not use the software in any way that disrupts or abuses the network, including but not limited to overloading servers, sending spam, or engaging in malicious activities.
+Compliance with Laws: Users must comply with all applicable local, state, national, and international laws and regulations when using the software.
+
+- Who retains ownership of the software and its intellectual property?
+The Satori Association (a opensource swiss Association incorperated entity)
+
+- Under what circumstances can the license be terminated by either party?
+idk. use your best judgement. 
+
+- What warranties (if any) are provided?
+idk none?
+
+- Any disclaimers of warranties? 
+idk. what do you think?
+
+- What limits are set on liability for damages?
+idk. I want this to be a 'use at your own risk' type of thing.
+
+- Which country's laws will govern the agreement?
+I suppose swiss law because The Satori Association is a swiss entity. The founder is a US citizen.
+
+- Where will any legal disputes be resolved?
+I suppose in Switzerland, because that is where the Satori Association is incorporated. What do you think?
+
+- Does the software collect any user data? If so, what kind?
+Public ip address, simplified metrics about the hardwhare it's running on such as cpu, memory, disk space so that it can optimize its performance for the machine. The predictions created by the software itself, any data the user voluntariliy and explicitly shares with the software and the network as an oracle (data provider) which is a complete voluntary optional capability of the software.
+
+- How are tokens earned?
+Broadly speaking the tokens are earned by providing vaulable data (oracle) and vaulable predictions (predicter, the default behavior of the software) to the Satori Network. The specifics of this calcuation are ever evolving and subject to change at any moment. The user must agree to this arrangement.
+
+- How are tokens used?
+Broadly speaking the tokens can be used to weight the user's vote in two domains: 1. which data streams (provided by oracles) are vaulable, worthy of reward for predicting, and 2. the relative worth/reward of all "Mining Activities" (two of which are providing data as an oracle and broadcasting predictions as a predictor).
+
+- Are there any specific terms related to token use?
+The user owns the tokens, they are personal property. They can do with them whatsoever they will and The Satori Association can't be held liable for any of their uses.
+
+- What is the contact information for support or legal inquiries?
+The Satori Association
+legal@satorinet.io
