@@ -1,0 +1,341 @@
+@font-face {
+  font-family: 'sailecBold';
+  src: url('../fonts/Sailec Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'sailecLight';
+  src: url('../fonts/Sailec Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Light),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.ttf") format("truetype"),
+  local(ZenMaruGothic Light);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'sailecMedium';
+  src: url('../fonts/Sailec Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Typewriter Press';
+  src: url('../fonts/TypewriterPress.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Navroadmap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 90%;
+  margin: 1px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.container h2 {
+  font-family: 'Averia Sans Libre', sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.2em;
+  margin: 272px 0 40px 0;
+}
+
+.container p {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.2em;
+  margin-bottom: 30px;
+}
+
+.status-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.status-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-family: 'Typewriter Press', sans-serif;
+}
+
+.status-box .icon {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.status-text {
+  font-size: 20px;
+  font-family: 'Typewriter Press', sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+}
+
+.icons .icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icons .icon-item img {
+  width: 60px;
+  height: auto;
+}
+
+.icons .icon-item p {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .icons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .icons .icon-item {
+    justify-content: center;
+  }
+
+  .container h2 {
+    font-size: 30px;
+    margin: 150px 0 20px 0;
+  }
+
+  .container p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#fade-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#fade-container.fade-in {
+  opacity: 1;
+}
+
+.empty-container {
+  height: 400px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.col-12.col-sm-12.col-md-6.col-lg-4 {
+  flex: 1;
+  max-width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.vtimeline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.vtimeline {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+
+.vtimeline-header {
+  width: 100%;
+  text-align: center;
+  background: white;
+  padding: 10px;
+}
+
+.vtimeline-header h5 {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  color: #333333;
+  margin: 0;
+}
+
+.vtimeline-item {
+  display: inline-block;
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  min-width: 200px;
+  margin: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.vtimeline-content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #444444;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.vtimeline-content p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  text-align: left;
+  white-space: normal;
+  word-wrap: break-word;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.vtimeline-content p.more-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.vtimeline-content.expanded p.more-content {
+  max-height: 150px;
+  opacity: 1;
+}
+
+.vtimeline-accomplished {
+  border: 2px solid grey;
+}
+
+.vtimeline-in-progress {
+  border: 2px dashed grey;
+}
+
+.vtimeline-plans {
+  color: grey;
+  border: 1px solid lightgrey;
+  opacity: 0.6;
+}
+
+.completed-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container, .row {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.vtimeline-container, .vtimeline {
+  width: 100%;
+  max-width: 100%;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Stack columns on top of each other */
+  }
+
+  .col-12.col-sm-12.col-md-6.col-lg-4 {
+    max-width: 100%;
+    margin-bottom: 20px; /* Add spacing between items */
+  }
+
+  .vtimeline {
+    flex-direction: row; /* Change vtimeline to row direction */
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: center; /* Center the items */
+  }
+
+  .vtimeline-item {
+    flex: 0 0 100%; /* Make each item take full width */
+    margin: 10px 0; /* Adjust margin */
+  }
+
+  .vtimeline-header {
+    text-align: left; /* Align the header text to the left */
+  }
+  
+  .container h2 {
+    font-size: 24px;
+    margin: 100px 0 20px 0;
+  }
+
+  .container p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

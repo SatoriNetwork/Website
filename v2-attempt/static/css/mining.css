@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Light),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.tff") format("tff"),
+  local(ZenMaruGothic Light);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Medium),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.tff") format("tff"),
+  local(ZenMaruGothic Medium);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Bold),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.tff") format("tff"),
+  local(ZenMaruGothic Bold);
+  font-weight: 700;
+}
+
+body {
+  font-family: 'Averia Sans Libre', Arial, sans-serif;
+  background-color: #E7E7E7;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar-container {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 40px;
+  padding: 0;
+  background-color: #EAEAEA;
+}
+
+.main-content h1 {
+  font-family: 'Averia Sans Libre', sans-serif;
+  font-size: 30px;
+  color: #000;
+  letter-spacing: 0.2em;
+  margin: 200px 0 40px 0;
+  max-width: 1050px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.main-content p {
+  max-width: 900px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2.5px;
+  margin-left: auto;
+  font-weight: 200;
+  margin-right: auto;
+  opacity: 0.65;
+  
+
+}
+.distribution-rate-section p {
+  max-width: 800px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2.5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-family: 'Averia Sans Libre', sans-serif;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  margin: 10vh 0 5vh 0;
+  font-size: clamp(2rem, 3vw, 4rem);
+}
+
+.distribution-rate-section h2,
+.fair-launch-section h2,
+.audit-section h2 {
+  font-size: clamp(2rem, 3vw, 4rem); 
+}
+
+
+.graph-placeholder {
+  margin: 332px 0;
+  padding: 50px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.audit-links {
+  list-style-type: none;
+  font-size: 20px;
+  line-height: 26px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 400;
+  color: black;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.audit-links a {
+  text-decoration: underline;
+  color: black;
+  font-weight: 400;
+}
+
+.audit-links li {
+  margin: 20px 0;
+}
+
+.zenmaru-bold {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: bold;
+}
+/* Fade-in Fade-out Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Initially hide the content */
+.hidden {
+  opacity: 0;
+}
+
+#fade-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#fade-container.fade-in {
+  opacity: 1;
+}

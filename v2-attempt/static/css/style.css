@@ -1,0 +1,459 @@
+@font-face {
+  font-family: 'sailecBold';
+  src: url('../fonts/Sailec Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'sailecLight';
+  src: url('../fonts/Sailec Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'sailecMedium';
+  src: url('../fonts/Sailec Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Light),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.tff") format("tff"),
+  local(ZenMaruGothic Light);
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Medium),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.tff") format("tff"),
+  local(ZenMaruGothic Medium);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: local(ZenMaruGothic Bold),
+  url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.tff") format("tff"),
+  local(ZenMaruGothic Bold);
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #CDCDCD;
+  padding: 10px 20px;
+  margin: 10px 10px; /* Adjust margins to control space around the navbar */
+  border-radius: 100px;
+  position: relative; /* This makes the navbar scrollable with the page */
+  z-index: 1; /* Keep it above dropdown or other elements */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 86px;
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+}
+
+.join-waitlist {
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 300;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 60px;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.hero-section {
+  height: 100vh;
+  background-image: url("{{ url_for('static', filename='images/heroBackground.png') }}");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  position: relative; /* Added for positioning the hero content */
+}
+
+.hero-content {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+}
+
+.hero-logo {
+  width: 710px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 710px;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border: 2px solid black;
+}
+
+.search-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  outline: none;
+}
+
+.hero-description {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000;
+  font-size: 20s  px; 
+  letter-spacing: 3px;
+  word-spacing: 5px;
+}
+
+.bottom-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+.bottom-textt {
+  color: #000;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 300;
+    opacity: 0.75;
+  word-spacing: 5px;
+  font-weight: 300;
+
+}
+
+.bottom-text-button {
+  color: #000;
+
+}
+
+.hero-button {  
+  border: 2px solid black;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  height: 54px;
+  width: 222px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hero-button-bottom {  
+  border: 3px solid black;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  height: 44px;
+  width: 222px;
+  cursor: pointer;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-button-text {
+  color: #000;
+  font-family: "Averia Sans Libre", sans-serif;
+}
+
+
+.hero-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.nav-link-text {
+  font-family: "Zen Maru Gothic", sans-serif;
+
+}
+
+.mid-textt {  
+  max-width: 500px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 300;
+
+}
+
+.mid-text-small {
+  max-width: 700px;
+  font-family: "Zen Maru Gothic",sans-serif;
+  font-weight: 300;
+    opacity: 0.75;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2.5px; 
+  margin-top: 80px;
+}
+
+.description-hero {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  width: full;
+  margin-top: 100px;
+}
+
+.mid-text-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: full;
+}
+
+.bnwimg{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.litepaper-text {
+  font-family: "sailecMedium";
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 2.5px;
+  margin-bottom: 50px;
+}
+
+
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 30px; /* Margin for mobile view */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px; /* Adjust this value based on your navbar height */
+    left: 0;
+    height: calc(100vh - 60px); /* Adjust based on navbar height */
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 15; /* Ensure the dropdown is below the navbar */
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    opacity: 0;
+    margin: 20px 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .nav-links.open li {
+    opacity: 1;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 2; /* Ensure hamburger is above the dropdown */
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 20px; /* Added padding for mobile view */
+  }
+
+  .hero-logo {
+    max-width: 90%; /* Adjusted logo size */
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .hero-description {
+    font-size: 20px; /* Adjusted font size */
+  }
+
+  .bottom-textt {
+    font-size: 16px; /* Adjusted font size */
+  }
+
+}
+#fade-container {
+  opacity: 0; /* Start fully invisible */
+  transition: opacity 1s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Fade-in effect */
+#fade-container.fade-in {
+  opacity: 1; /* Make content visible */
+}
+
+/* #fade-container {
+  opacity: 1; 
+  transition: opacity 1s ease-in-out; 
+}
+
+#fade-container.fade-out {
+  opacity: 0; 
+}
+
+#fade-container.fade-in {
+  opacity: 1; 
+} */
+
+
+/* 
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#fade-container {
+  animation: fadeIn 2s ease-in-out; 
+} */
+ /* Additional styles for the search functionality */
+
+ .search-bar {
+  position: relative;
+  z-index: 0;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+#content-to-hide {
+  transition: opacity 0.5s ease-in-out;
+}
+.hidden {
+  display: none;
+}
+.bottom-hidden {
+  display: none;
+}
+
+.hero-section {
+  transition: transform 0.6s ease;
+}
+
+.hero-section.search-active {
+  transform: translateY(-300px);
+}
+
+.hero-logo {
+  transition: transform 0.3s ease;
+}
+
+.hero-section.search-active .hero-logo {
+  transform: translateY(-50px);
+}

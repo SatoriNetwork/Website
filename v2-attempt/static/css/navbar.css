@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'sailecBold';
+    src: url('../fonts/Sailec Bold.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'sailecLight';
+    src: url('../fonts/Sailec Light.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'sailecMedium';
+    src: url('../fonts/Sailec Medium.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: "Zen Maru Gothic";
+    src: local(ZenMaruGothic Light),
+    url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.tff") format("tff"),
+    local(ZenMaruGothic Light);
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Zen Maru Gothic";
+    src: local(ZenMaruGothic Medium),
+    url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.tff") format("tff"),
+    local(ZenMaruGothic Medium);
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: "Zen Maru Gothic";
+    src: local(ZenMaruGothic Bold),
+    url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.tff") format("tff"),
+    local(ZenMaruGothic Bold);
+    font-weight: 700;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CDCDCD;
+    padding: 10px 20px;
+    margin: 10px 10px; /* Adjust margins to control space around the navbar */
+    border-radius: 100px;
+    position: relative; /* This makes the navbar scrollable with the page */
+    z-index: 1; /* Keep it above dropdown or other elements */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 86px;
+  }
+  
+  .logo-img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .join-waitlist {
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: "Averia Sans Libre", sans-serif;
+    font-weight: 300;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 60px;
+  }
+  
+  .nav-links li {
+    margin-left: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #000;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 30px; /* Margin for mobile view */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px; /* Adjust this value based on your navbar height */
+    left: 0;
+    height: calc(100vh - 60px); /* Adjust based on navbar height */
+    width: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 0; /* Ensure the dropdown is below the navbar */
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    opacity: 0;
+    margin: 20px 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .nav-links.open li {
+    opacity: 1;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 2; /* Ensure hamburger is above the dropdown */
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 20px; /* Added padding for mobile view */
+  }
+
+  .hero-logo {
+    max-width: 90%; /* Adjusted logo size */
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .hero-description {
+    font-size: 20px; /* Adjusted font size */
+  }
+
+  .bottom-textt {
+    font-size: 16px; /* Adjusted font size */
+  }
+
+}

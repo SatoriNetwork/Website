@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/download.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@400&family=Sailec:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar-container">
+        {% include 'navbar.html' %}
+    </div>
+    
+    <!-- Wrap content in a fade-container -->
+    <div id="fade-container" class="hidden">
+        <div class="content-wrapper">
+            <h1 class="main-title">START YOUR JOURNEY</h1>
+            <p class="main-subtitle">Satori runs inside of docker, isolated from the rest of the machine.</p>
+            
+            <h2 class="steps-heading">HERE ARE THE STEPS TO FOLLOW TO INSTALL SATORI ON YOUR DEVICE</h2>
+            <p class="steps-note">Note: Minimum Requirements for Running Satori</p>
+        </div>
+
+    <div class="step">
+      <div class="step-header" onclick="toggleStep(this)">
+          <h2>1. DOWNLOAD AND INSTALL DOCKER</h2>
+          <span class="arrow">▼</span>
+      </div>
+      <div class="step-content">
+          <div class="step-content-inner">
+              <p>Docker is required to run Satori. Follow these steps:</p>
+              <ol>
+                  <li>Visit the Docker website to download Docker Desktop.</li>
+                  <li>Install Docker on your system.</li>
+                  <li>After installation, set Docker to run on startup.</li>
+              </ol>
+              <div class="image-container">
+                <img src="static/images/docker-settings.png" style="border: .1rem solid black; border-radius: .3rem;" width="450" height="250" title="docker settings" alt="access docker settings" />
+                <img src="static/images/docker-startup.png" style="border: .1rem solid black; border-radius: .3rem;" width="450" height="250" title="run on startup" alt="set docker to run on startup" />
+            </div>
+            
+          </div>
+      </div>
+  </div>
+
+  <div class="step">
+      <div class="step-header" onclick="toggleStep(this)">
+          <h2>2. DOWNLOAD AND INSTALL SATORI</h2>
+          <span class="arrow">▼</span>
+      </div>
+      <div class="step-content">
+          <div class="step-content-inner">
+              <h3>Windows</h3>
+              <ol>
+                  <li>Download the Satori .exe file.</li>
+                  <li>Run the downloaded .exe file to install Satori.</li>
+                  <li>Allow Satori traffic through Windows Firewall when prompted.</li>
+              </ol>
+              <p>Alternative PowerShell installation:</p>
+              <pre><code>
+# Run in PowerShell (Python 3.7+ required)
+echo "installing dependencies..."
+pip install requests==2.31.0
+pip install aiohttp==3.8.4
+pip install satorisynapse
+
+echo "creating Satori folders..."
+python -c "import os; path = os.path.join(os.environ.get('APPDATA', 'C:\\'), 'Satori'); for folder in ['config', 'data', 'models', 'wallet']: os.makedirs(os.path.join(path, folder), exist_ok=True)"
+
+echo "setting Satori to run on startup..."
+python -c """import os; import threading; path = os.path.join(os.environ['APPDATA'], r'Microsoft\Windows\Start Menu\Programs\Startup'); with open(os.path.join(path, 'satori.bat'), 'w') as f: f.write('start "docker" "C:\Program Files\Docker\Docker\Docker Desktop.exe" && start docker pull satorinet/satorineuron:latest && start python -m satorisynapse.async && timeout /T 60 /nobreak > NUL && docker run --rm -it --name satorineuron -p 24601:24601 -v %APPDATA%\\Satori\\wallet:/Satori/Neuron/wallet -v %APPDATA%\\Satori\\config:/Satori/Neuron/config -v %APPDATA%\\Satori\\data:/Satori/Neuron/data -v %APPDATA%\\Satori\\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:latest ./start.sh')"""
+
+echo "starting Docker..."
+Start-Process -FilePath "C:\Program Files\Docker\Docker\Docker Desktop.exe" -WindowStyle Minimized
+docker pull satorinet/satorineuron:latest
+
+echo "starting Satori p2p relay..."
+Start-Job -ScriptBlock { python -m satorisynapse.run async }
+
+echo "starting Satori..."
+docker run --rm -it --name satorineuron -p 24601:24601 -v ${env:APPDATA}\Satori\wallet:/Satori/Neuron/wallet -v ${env:APPDATA}\Satori\config:/Satori/Neuron/config -v ${env:APPDATA}\Satori\data:/Satori/Neuron/data -v ${env:APPDATA}\Satori\models:/Satori/Neuron/models --env ENV=prod satorinet/satorineuron:latest ./start.sh
+              </code></pre>
+
+              <h3>Mac</h3>
+              <ol>
+                  <li>Download the Satori .dmg file.</li>
+                  <li>Open the downloaded .dmg file.</li>
+                  <li>Drag the Satori application to your Applications folder.</li>
+                  <li>Control-click the Satori icon and select "Open".</li>
+                  <li>Control-click the Satori icon in the dock and click "Options" > "Open at Login".</li>
+              </ol>
+              <p>Alternative terminal installation:</p>
+              <pre><code>
+cd ~
+curl -o ~/satori.zip https://satorinet.io/static/download/mac/satori.zip
+unzip ~/satori.zip
+rm ~/satori.zip
+cd ~/.satori
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+xcode-select --install
+brew install xz
+brew install python
+brew install pyenv
+pyenv install 3.12.4
+bash install.sh
+bash install_service.sh
+              </code></pre>
+
+              <h3>Linux</h3>
+              <ol>
+                  <li>Download the Satori .zip file.</li>
+                  <li>Extract the contents of the zip file.</li>
+                  <li>Follow the instructions in the readme.md file.</li>
+              </ol>
+              <p>Alternative terminal installation:</p>
+              <pre><code>
+cd ~
+wget -P ~/ https://satorinet.io/static/download/linux/satori.zip
+unzip ~/satori.zip
+rm ~/satori.zip
+cd ~/.satori
+sudo apt-get install python3-venv -y
+bash install.sh
+bash install_service.sh
+              </code></pre>
+          </div>
+      </div>
+  </div>
+
+  <div class="step">
+      <div class="step-header" onclick="toggleStep(this)">
+          <h2>3. SETUP YOUR VAULT</h2>
+          <span class="arrow">▼</span>
+      </div>
+      <div class="step-content">
+          <div class="step-content-inner">
+              <p>Set up your Satori vault for secure operation.</p>
+              <ol>
+                  <li>Create a strong vault password (and remember it).</li>
+                  <li>For maximum security, enable the Mine-to-Vault feature.</li>
+              </ol>
+              <img src="static\images\satori-vault-setup1.png" alt="Setup vault password" style="border: .1rem solid black; border-radius: .3rem;" width="850"  title="docker settings" class="resize-on-med-and-down"/>
+              <img src="static\images\satori-vault-setup2-obvious.png" style="border: .1rem solid black; border-radius: .3rem"; width="850"  />
+          </div>
+      </div>
+  </div>
+
+  <div class="step">
+      <div class="step-header" onclick="toggleStep(this)">
+          <h2>4. KEEP SATORI RUNNING</h2>
+          <span class="arrow">▼</span>
+      </div>
+      <div class="step-content">
+          <div class="step-content-inner">
+            <ol>
+              <li>Satori will run in the background, continuously making predictions about the future and generating Satori Tokens.</li>
+              <li>If you need to pause the Satori AI Engine while using your computer, you can do so from the Satori dashboard:</li>
+          </ol>
+              <img src="static\images\satori-pause-big.png"; width="850" alt="How to pause Satori" />
+          </div>
+      </div>
+  </div>
+</div>
+  <script></script>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

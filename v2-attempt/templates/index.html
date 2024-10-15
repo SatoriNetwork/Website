@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Static Site</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="{{ url_for('static', filename='images/logo.png') }}"
+          alt="Logo"
+          class="logo-img"
+        />
+        <span class="join-waitlist">Join Waitlist</span>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="roadmap" class="nav-link-text">Roadmap</a></li>
+        <li><a href="mining" class="nav-link-text">Mining</a></li>
+        <li><a href="join" class="nav-link-text">Join</a></li>
+        <li><a href="#" class="nav-link-text">Get Early Access</a></li>
+        <li><a href="download" class="nav-link-text">Download App</a></li>
+      </ul>
+    </nav>
+
+    <!-- Fade Container Section -->
+    <div id="fade-container-index">
+      <div class="hero-section">
+        <div class="hero-content">
+          <img
+            src="{{ url_for('static', filename='images/satoriwithlogo.png') }}"
+            alt="Satori with Logo"
+            class="hero-logo"
+          />
+          <div class="search-bar">
+            <img
+              src="{{ url_for('static', filename='images/search.png') }}"
+              alt="Search Icon"
+              class="search-icon"
+            />
+            <input
+              type="text"
+              placeholder="Eg: Weather forecast of Poland during next week"
+              class="search-input"
+            />
+          </div>
+
+          <!-- Content to hide on search bar focus -->
+          <div id="content-to-hide">
+            <p class="hero-description">
+              Satori Predicts the Future of Everything <br />
+              All Predictions are freely available
+            </p>
+            <div class="bottom-text">
+              <p class="bottom-textt">
+                Video Explanation of Satori and It’s Principals
+              </p>
+              <a href="javascript:void(0)">
+                <div class="hero-button-bottom">
+                  <p class="hero-button-text">Play Now</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="description-hero">
+        <div class="mid-text-div">
+          <p class="mid-textt">
+            SATORI IS AN OPEN SOURCE, COMMUNITY DRIVEN PROJECT
+          </p>
+        </div>
+        <div>
+          <p class="mid-text-small">
+            It's auditable and transparent.<br />
+            It aims at being the largest prediction network in the world
+          </p>
+        </div>
+        <img
+          src="{{ url_for('static', filename='images/blackandwhitelogo.png') }}"
+          alt="Black and white"
+          class="bnwimg"
+        />
+        <p class="litepaper-text">Litepaper of Satori is now Live</p>
+        <iframe
+          class="litepaper"
+          height="12000"
+          src="https://docs.google.com/document/d/e/2PACX-1vSn2hOYs2QtKBsGAovbZKyeGMdGIe3MX6BZaLvvK2ZVaml2W9_XQeiUQQvtL9g9ycfunm1rC3vscVNr/pub?embedded=true"
+          style="
+            border: 0.1rem solid black;
+            border-radius: 0.3rem;
+            max-width: 800px;
+            width: 100%;
+          "
+        ></iframe>
+      </div>
+    </div>
+    
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

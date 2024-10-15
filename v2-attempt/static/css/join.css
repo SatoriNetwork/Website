@@ -1,0 +1,302 @@
+/* Global Styles */
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  background-color: white;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.Navroadmap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.intro-text {
+  font-family: 'Averia Sans Libre', sans-serif;
+  font-size: 30px;
+  color: #000;
+  letter-spacing: 0.2em;
+  margin: 200px 0 40px 0;
+  max-width: 1050px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.intro-subtext {
+  max-width: 900px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 2.5px;
+  margin-left: auto;
+  font-weight: 200;
+  margin-right: auto;
+  opacity: 0.65;
+}
+
+.primary-button {
+  border: 3px solid black;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  height: 44px;
+  width: 222px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.primary-button-text {
+  color: #000;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.github-button {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.github-button a {
+  color: white;
+}
+
+.image-container {
+  margin: 50px 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.image-title {
+  font-style: italic;
+}
+
+.donation-title {
+  margin-top: 50px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-weight: 600;
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.section {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.resource-list,
+.media-list {
+  border-top: 1px solid #ccc;
+  padding-top: 5px;
+}
+
+.resource-list div,
+.media-list div {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.donate-item {
+  border: none;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: transform 0.1s;
+}
+
+.donate-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.donate-item:active {
+  transform: scale(0.95);
+}
+
+.btc {
+  background-color: #f2a900;
+  color: white;
+}
+
+.eth {
+  background-color: #627eea;
+  color: white;
+}
+
+.rvn {
+  background-color: #384182;
+  color: white;
+}
+
+.evr {
+  background-color: #7195c1;
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-link {
+  border: none;
+  padding: 10px;
+  text-align: center;
+  flex-grow: 1;
+  margin: 0 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.social-link img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.twitter {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.discord {
+  background-color: #7289da;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 20px;
+  }
+
+  .intro-text {
+    font-size: 24px;
+    margin: 100px 0 30px 0;
+  }
+
+  .intro-subtext {
+    font-size: 16px;
+  }
+
+  .primary-button {
+    padding: 10px 15px;
+    font-size: 14px;
+    height: auto;
+  }
+
+  .image-container img {
+    max-width: 100%;
+  }
+
+  .social-links {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .social-link {
+    width: 80%;
+    margin: 10px 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr; /* Single column layout */
+    max-width: 100%;
+  }
+
+  .donate-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .section {
+    padding: 20px; /* Slightly smaller padding */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#fade-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#fade-container.fade-in {
+  opacity: 1;
+}

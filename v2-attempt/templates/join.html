@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satori Neurons</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/join.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="Navroadmap">
+    {% include 'navbar.html' %}
+  </div>
+
+  <!-- Wrap content in a fade-container -->
+  <div id="fade-container" class="hidden">
+    <div class="fade-in">
+      <div class="content-container">
+        <p class="intro-text light-section">Satori Neurons are automated and help the network know the future of everything.</p>
+        <p class="intro-subtext light-section">Anyone can run a neuron.</p>
+
+        <button class="primary-button" onclick="showDownload()"><p class="primary-button-text">Download</p></button>
+        
+        <div class="image-container">
+          <a href="#">
+            <img src="static/images/nodeui2.png" alt="Satori Neuron software UI" title="Neuron software">
+          </a>
+        </div>
+
+        <p class="image-title"><i>Satori Neuron</i></p>
+
+        <button class="github-button">
+          <a href="https://github.com/SatoriNetwork">Open Source: Github</a>
+        </button>
+
+        <div class="container">
+          <div class="section">
+              <div class="section-title">Donate</div>
+              <div class="donate-grid">
+                  <div class="donate-item btc" onclick="copyToClipboard('bc1q6cfehh02078fpqa4ccxsnlxcgk6ucmgh5py2jf', 'BTC')">
+                      <i class="fab fa-bitcoin"></i> BTC
+                  </div>
+                  <div class="donate-item eth" onclick="copyToClipboard('0x44e6D7301F3D552Ed97aFF868d966202Bb6FB419', 'ETH')">
+                      <i class="fab fa-ethereum"></i> ETH
+                  </div>
+                  <div class="donate-item rvn" onclick="copyToClipboard('RJnd9Hn3T9pJMj9BMyL39qpLfVe9uUeWPM', 'RVN')">
+                      <img src="static/images/ravencoin.png" alt="RVN Logo"> RVN
+                  </div>
+                  <div class="donate-item evr" onclick="copyToClipboard('ETtu2aQna2JnU5FA6csVTy6fco4zHjhTcw', 'EVR')">
+                      <img src="static\images\evrlogo.png" alt="EVR Logo"> EVR
+                  </div>
+              </div>
+          </div>
+
+          <div class="section">
+              <div class="section-title">Join the Conv.</div>
+              <div class="social-links">
+                  <div class="social-link twitter" onclick="window.open('https://twitter.com/Satorinetio', '_blank')">
+                      <i class="fab fa-twitter"></i> Twitter
+                  </div>
+                  <div class="social-link discord" onclick="window.open('https://discord.gg/va6FK77R3F', '_blank')">
+                      <i class="fab fa-discord"></i> Discord
+                  </div>
+              </div>
+          </div>
+
+          <div class="section">
+              <div class="section-title">More Resources</div>
+              <div class="resource-list">
+                  <div>Litepaper</div>
+                  <div>Tokenomics</div>
+                  <div>Github</div>
+                  <div>Satori Neuron UI</div>
+                  <div>Alpha Announcement</div>
+                  <div>Beta Announcement</div>
+              </div>
+          </div>
+
+          <div class="section">
+              <div class="section-title">In the media</div>
+              <div class="media-list">
+                  <div>Satori reviewed by Streamr</div>
+                  <div>Satori reviewed by DecentReviews.co</div>
+                  <div>Article by CyberPunkMetalHead</div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to your external JavaScript file -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

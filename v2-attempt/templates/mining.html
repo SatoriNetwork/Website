@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mining.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@400&family=Sailec:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar-container">
+        {% include 'navbar.html' %}
+    </div>
+    
+    <div id="fade-container" class="hidden">
+        <div class="main-content">
+            <h1>COMMUNITY LED MINING MEANS THE TOKEN HOLDERS ARE IN CHARGE.</h1>
+
+            <p>Tokens are earned according to the manifest and approved by the community.</p>
+
+            <div class="distribution-rate-section">
+                <h2>DISTRIBUTION RATE</h2>
+                <p>Each day a set number of coins are minted according to this predetermined schedule.</p>
+                <p>Ultimately, the Satori token distribution rate is controlled by token holders, via vote.</p>
+            </div>
+
+            <!-- Graph Placeholder Section -->
+            <div class="graph-placeholder">
+                <p>GRAPH HERE</p>
+            </div>
+
+            <!-- Fair Launch Section -->
+            <div class="fair-launch-section">
+                <h2>FAIR LAUNCH</h2>
+                <p>Satori had <strong class="sailec-bold">no pre-mine </strong> and <strong class="sailec-bold">no airdrop</strong>.</p>
+                <p>Satori’s tokenomics are designed with a long-term view, aimed at supporting a sustainable, robust, and healthy ecosystem.</p>
+                <p>Community-led mining means the community of token holders is in charge of the token, and can alter the initial design to dynamically fit a changing world.</p>
+                <p><strong class="sailec-bold">Satori’s tokenomics are open, auditable, and transparent.</strong></p>
+            </div>
+
+            <!-- Audit Section -->
+            <div class="audit-section">
+                <h2>AUDIT</h2>
+                <p>The following links direct to a 3rd party block explorer which shows transaction histories, issuance, total supply, and all other originating and current details concerning the SATORI Token.</p>
+                <ul class="audit-links">
+                    <li><a href="https://evr.cryptoscope.io/address/?address=ETbmMAt4VJJAELoZHP9Qq5rzG1xdrFWsBG" target="_blank">Original Address</a></li>
+                    <li><a href="https://evr.cryptoscope.io/address/?address=EZSQebCRoqX8nRSfDikpuQYnPtW6ZsftEt" target="_blank">Current Address</a></li>
+                    <li><a href="https://evr.cryptoscope.io/asset/?asset_id=081cab6cd370fa387035b9fb5e67e736d7493453" target="_blank">SATORI</a></li>
+                    <li><a href="https://evr.cryptoscope.io/asset/?asset_id=b0615a9beb5ad1483f2fe4c8d5f546fce5e47fc0" target="_blank">SATORI Administrator Token</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+@font-face {
+    font-family: 'SailecBold';
+    src: url('../fonts/Sailec Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SailecLight';
+    src: url('../fonts/Sailec Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SailecMedium';
+    src: url('../fonts/Sailec Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "ZenMaruGothic";
+    src: url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "ZenMaruGothic";
+    src: url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Black.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "ZenMaruGothic";
+    src: url("../fonts/Zen_Maru_Gothic/ZenMaruGothic-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Averia Sans Libre', Arial, sans-serif;
+    background-color: white;
+    color: #000;
+    text-align: center;
+}
+
+ol {
+    font-family: 'ZenMaruGothic', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    opacity: 0.75;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+ol li {
+    margin-bottom: 10px;
+    list-style-position: inside;
+    text-align: left;
+}
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 10;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.main-title {
+    font-family: 'Averia Sans Libre', sans-serif;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+    margin: 0px 0 20px 0;
+    font-size: clamp(1.5rem, 3vw, 4rem);
+}
+
+.main-subtitle {
+    max-width: 70%;
+    font-family: 'ZenMaruGothic', sans-serif;
+    font-weight: 300;
+    opacity: 0.75;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 2.5px;
+    margin-bottom: 40px;
+}
+
+.steps-heading {
+    font-family: 'ZenMaruGothic', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.steps-note {
+    max-width: 70%;
+    font-family: 'ZenMaruGothic', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.75;
+    margin-bottom: 30px;
+}
+
+.li {
+    align-self: start;
+    font-family: 'ZenMaruGothic', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.75;
+}
+
+#fade-container {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+#fade-container.fade-in {
+    opacity: 1;
+}
+
+.step {
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-header {
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.step-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.step-content-inner {
+    padding: 15px;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.open .arrow {
+    transform: rotate(180deg);
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border: 1px solid #dcdcdc;
+    text-align: left;
+}
+
+code {
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    color: black;
+}
+
+/* Responsive Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: clamp(1.2rem, 5vw, 2.5rem);
+    }
+
+    .main-subtitle {
+        font-size: 18px;
+    }
+
+    .step {
+        padding: 15px;
+    }
+
+    .step-header h2 {
+        font-size: 18px;
+    }
+
+    pre {
+        padding: 10px;
+    }
+
+    .steps-note, .li, ol {
+        font-size: 18px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: clamp(1rem, 6vw, 2rem);
+    }
+
+    .main-subtitle {
+        font-size: 16px;
+    }
+
+    .step {
+        padding: 10px;
+    }
+
+    .step-header h2 {
+        font-size: 16px;
+    }
+
+    pre {
+        padding: 8px;
+    }
+
+    .steps-note, .li, ol {
+        font-size: 16px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* On smaller screens, stack the images vertically */
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+        align-items: center; /* Optional: Centers the images */
+    }
+
+    .image-container img {
+        width: 100%; /* Ensures the images take up full width */
+        height: auto; /* Keeps aspect ratio */
+    }
+}
