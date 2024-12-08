@@ -21,8 +21,8 @@ import sentry_sdk  # type: ignore
 from waitress import serve
 from flask import Flask, Response, render_template, jsonify, render_template_string, request
 # from satorilib import logging as logging
-from satorilib.api.time.time import timestampToDatetime, datetimeToTimestamp, isValidDate
-from satorilib.api.time.time import timestampToSeconds, secondsToTimestamp, now
+from satorilib.utils.time import timestampToDatetime, datetimeToTimestamp, isValidDate
+from satorilib.utils.time import timestampToSeconds, secondsToTimestamp, now
 # from satoricentral import logging
 from satoricentral import logging as logger
 from satoricentral import Wallet, Stream, Referral, EarlyAccess
